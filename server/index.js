@@ -7,8 +7,8 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 const PORT = process.env.PORT || 4000;
 
-// Serve frontend build if client/dist exists (for local integrated server)
-const clientDist = path.join(__dirname, '../client/dist');
+// Serve frontend build if dist exists (for local integrated server)
+const clientDist = path.join(__dirname, '../dist');
 app.use(express.static(clientDist));
 app.get('*', (req, res, next) => {
   if (req.path.startsWith('/api')) return next();
